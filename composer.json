@@ -1,0 +1,24 @@
+{
+    "name": "augustash/module-facebookpixel",
+    "description": "Module that adds FaceBook Pixel to header.",
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "authors":[
+        {
+            "name":"Adam Cornell",
+            "email":"acornell@augustash.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Augustash\\FaceBookPixel\\": ""
+        }
+    }
+}
