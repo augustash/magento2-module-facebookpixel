@@ -9,6 +9,10 @@
         {
             "name":"Adam Cornell",
             "email":"acornell@augustash.com"
+        },
+        {
+            "name":"Josh Johnson",
+            "email":"josh@augustash.com"
         }
     ],
     "require": {
@@ -18,7 +22,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Augustash\\FaceBookPixel\\": ""
+            "Augustash\\Facebookpixel\\": ""
         }
     }
 }
