@@ -2,7 +2,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="head.additional">
-            <block class="Augustash\Facebookpixel\Block\Snippet" name="augustash_facebookpixel.snippet" template="Augustash_Facebookpixel::snippet.phtml"/>
+            <block class="Augustash\Facebookpixel\Block\Snippet" name="augustash_facebookpixel.snippet" template="snippet.phtml"/>
+        </referenceBlock>
+
+        <referenceBlock name="order.success.additional.info">
+        	<block class="Augustash\Facebookpixel\Block\Revenue" name="augustash_facebookpixel.revenue" template="revenue.phtml"/>
         </referenceBlock>
     </body>
 </page>
