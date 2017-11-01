@@ -4,9 +4,5 @@
         <referenceBlock name="head.additional">
             <block class="Augustash\Facebookpixel\Block\Snippet" name="augustash_facebookpixel.snippet" template="snippet.phtml"/>
         </referenceBlock>
-
-        <referenceBlock name="order.success.additional.info">
-        	<block class="Augustash\Facebookpixel\Block\Revenue" name="augustash_facebookpixel.revenue" template="revenue.phtml"/>
-        </referenceBlock>
     </body>
 </page>
