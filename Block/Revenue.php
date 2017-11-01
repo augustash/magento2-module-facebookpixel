@@ -4,12 +4,6 @@ namespace Augustash\Facebookpixel\Block;
 
 use Magento\Checkout\Block\Onepage\Success;
 use Augustash\Facebookpixel\Block\Snippet as SnippetHelper;
-use Psr\Log\LoggerInterface as LoggerData;
-
-/**
- * For logging arrays
- * $this->helper->addWarning('Data: ', $output);
- */
 
 /**
  * One page checkout success page
@@ -30,11 +24,9 @@ class Revenue extends \Magento\Framework\View\Element\Template
 	        \Magento\Framework\View\Element\Template\Context $context,
 	        \Magento\Checkout\Model\Session $checkoutSession,
 	        SnippetHelper $snippet,
-	        LoggerData $helper,
 	        array $data = []
 	    )
 	{
-		$this->helper = $helper;
 		$this->snippet = $snippet;
 	    $this->checkoutSession = $checkoutSession;
 
@@ -42,7 +34,7 @@ class Revenue extends \Magento\Framework\View\Element\Template
 	}
 
 	/**
-	 *	Retrieve last total amount from checkout session
+	 *	Return last total amount from checkout session
 	 *
      * @return string
      */
