@@ -8,7 +8,7 @@ use Augustash\Facebookpixel\Helper\Data as FacebookpixelHelperData;
 /**
  * One page checkout success page
  */
-class Revenue extends \Magento\Framework\View\Element\Template
+class Blocks extends \Magento\Framework\View\Element\Template
 {
 	/**
      * @var \Augustash\Facebookpixel\Helper\Data
@@ -58,6 +58,16 @@ class Revenue extends \Magento\Framework\View\Element\Template
     public function getRevenueEnabled()
     {
         return $this->helper->trackRevenue();
+    }
+
+    /**
+     * Retrieve configuration value for `account_number`
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->helper->accountNumber();
     }
 
     /**
