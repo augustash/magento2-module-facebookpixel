@@ -3,7 +3,7 @@
 namespace Augustash\Facebookpixel\Block;
 
 use Magento\Checkout\Block\Onepage\Success;
-use Augustash\Facebookpixel\Block\Snippet as SnippetHelper;
+use Augustash\Facebookpixel\Helper\Data as FacebookpixelHelperData;
 
 /**
  * One page checkout success page
@@ -11,29 +11,56 @@ use Augustash\Facebookpixel\Block\Snippet as SnippetHelper;
 class Revenue extends \Magento\Framework\View\Element\Template
 {
 	/**
-     * @var boolean
+     * @var \Augustash\Facebookpixel\Helper\Data
      */
-    protected $revenueEnabled;
+	protected $helper;
 
 	/**
      * @var \Magento\Checkout\Model\Session
      */
 	protected $checkoutSession;
 
+	/**
+     * class constructor
+     *
+     * @param \Magento\Framework\View\Element\Template\Context  $context
+     * @param FacebookpixelHelperData                           $helper
+     * @param array                                             $data
+     */
 	public function __construct(
 	        \Magento\Framework\View\Element\Template\Context $context,
+	        FacebookpixelHelperData $helper,
 	        \Magento\Checkout\Model\Session $checkoutSession,
-	        SnippetHelper $snippet,
 	        array $data = []
 	    )
 	{
-		$this->snippet = $snippet;
+		$this->helper = $helper;
 	    $this->checkoutSession = $checkoutSession;
 
         parent::__construct($context, $data);
 	}
 
 	/**
+     * Check if Facebookpixel module is enabled
+     *
+     * @return boolean
+     */
+    public function getIsEnabled()
+    {
+        return $this->helper->isEnabled();
+    }
+
+    /**
+     * Check if Facebookpixel module advanced revenue tracking is enabled
+     *
+     * @return boolean
+     */
+    public function getRevenueEnabled()
+    {
+        return $this->helper->trackRevenue();
+    }
+
+    /**
 	 *	Return last total amount from checkout session
 	 *
      * @return string
@@ -43,20 +70,5 @@ class Revenue extends \Magento\Framework\View\Element\Template
 		$order = $this->checkoutSession->getLastRealOrder();
 
 		return $order->getData('total_due');
-    }
-
-    /**
-     * Check that revenue tracking is enabled in admin
-     *
-     * @return boolean
-     */
-    public function getTrackRevenue()
-    {
-    	$this->revenueEnabled = $this->_scopeConfig->getValue(
-            'augustash_facebookpixel/advanced/revenue',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        );
-
-        return $this->revenueEnabled;
     }
 }
