@@ -45,7 +45,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isSnippetEnabled()
     {
-        $this->isSnippetEnabled = $this->getConfig('augustash_facebookpixel/general/advanced/snippet');
+        $this->isSnippetEnabled = $this->getConfig('augustash_facebookpixel/advanced/snippet');
 
         return $this->isSnippetEnabled;
     }

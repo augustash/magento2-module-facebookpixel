@@ -51,7 +51,7 @@ class Blocks extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Check if Facebookpixel module is enabled
+     * Check if Facebookpixel module advanced javascript to header is enabled
      *
      * @return boolean
      */
