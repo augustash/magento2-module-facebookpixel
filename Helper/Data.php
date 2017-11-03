@@ -14,6 +14,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * @var boolean
      */
+    protected $isSnippetEnabled;
+
+    /**
+     * @var boolean
+     */
     protected $revenueEnabled;
 
     /**
@@ -22,7 +27,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     protected $accountNumber;
 
     /**
-     * Retrieve configuration value for `enabled`
+     * Check if module is enabled
      *
      * @return boolean
      */
@@ -34,7 +39,19 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     }
 
     /**
-     * Check that revenue tracking is enabled in admin
+     * Check if javascript snippet is added by this module
+     *
+     * @return boolean
+     */
+    public function isSnippetEnabled()
+    {
+        $this->isSnippetEnabled = $this->getConfig('augustash_facebookpixel/general/advanced/snippet');
+
+        return $this->isSnippetEnabled;
+    }
+
+    /**
+     * Check if revenue tracking is enabled
      *
      * @return boolean
      */

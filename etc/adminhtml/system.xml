@@ -16,7 +16,7 @@
                <label><![CDATA[Facebookpixel General Settings]]></label>
                <field id="enabled" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
                    <label><![CDATA[Enable Extension]]></label>
-                   <comment><![CDATA[Enable or disable the inclusion of the Facebookpixel JavaScript snippet.]]></comment>
+                   <comment><![CDATA[Enable or diable module.]]></comment>
                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                </field>
                <field id="account_number" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -26,7 +26,12 @@
             </group>
             <group id="advanced" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                <label><![CDATA[Facebookpixel Advanced Settings]]></label>
-               <field id="revenue" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+               <field id="snippet" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label><![CDATA[Add Facebook Pixel javascript to header.]]></label>
+                   <comment><![CDATA[Third-party module may add the Facebook Pixel javascript as well. Stop this module adding its code snippet by unchecking this box.]]></comment>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+               <field id="revenue" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                    <label><![CDATA[Enable Revenue Tracking]]></label>
                    <comment><![CDATA[Enable or disable the return of order totals to the Facebook Pixel dashboard.]]></comment>
                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

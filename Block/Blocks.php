@@ -51,6 +51,16 @@ class Blocks extends \Magento\Framework\View\Element\Template
     }
 
     /**
+     * Check if Facebookpixel module is enabled
+     *
+     * @return boolean
+     */
+    public function getIsSnippetEnabled()
+    {
+        return $this->helper->isSnippetEnabled();
+    }
+
+    /**
      * Check if Facebookpixel module advanced revenue tracking is enabled
      *
      * @return boolean
