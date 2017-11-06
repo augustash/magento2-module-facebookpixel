@@ -10,37 +10,37 @@ use Augustash\Facebookpixel\Helper\Data as FacebookpixelHelperData;
  */
 class Blocks extends \Magento\Framework\View\Element\Template
 {
-	/**
+    /**
      * @var \Augustash\Facebookpixel\Helper\Data
      */
-	protected $helper;
+    protected $helper;
 
-	/**
+    /**
      * @var \Magento\Checkout\Model\Session
      */
-	protected $checkoutSession;
+    protected $checkoutSession;
 
-	/**
+    /**
      * class constructor
      *
      * @param \Magento\Framework\View\Element\Template\Context  $context
      * @param FacebookpixelHelperData                           $helper
      * @param array                                             $data
      */
-	public function __construct(
-	        \Magento\Framework\View\Element\Template\Context $context,
-	        FacebookpixelHelperData $helper,
-	        \Magento\Checkout\Model\Session $checkoutSession,
-	        array $data = []
-	    )
-	{
-		$this->helper = $helper;
-	    $this->checkoutSession = $checkoutSession;
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        FacebookpixelHelperData $helper,
+        \Magento\Checkout\Model\Session $checkoutSession,
+        array $data = []
+    )
+    {
+        $this->helper = $helper;
+        $this->checkoutSession = $checkoutSession;
 
         parent::__construct($context, $data);
-	}
+    }
 
-	/**
+    /**
      * Check if Facebookpixel module is enabled
      *
      * @return boolean
@@ -81,14 +81,14 @@ class Blocks extends \Magento\Framework\View\Element\Template
     }
 
     /**
-	 *	Return last total amount from checkout session
-	 *
+     *  Return last total amount from checkout session
+     *
      * @return string
      */
-	public function getRevenue()
-	{
-		$order = $this->checkoutSession->getLastRealOrder();
+    public function getRevenue()
+    {
+        $order = $this->checkoutSession->getLastRealOrder();
 
-		return $order->getData('total_due');
+        return $order->getData('total_due');
     }
 }

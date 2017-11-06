@@ -2,10 +2,14 @@
 
 namespace Augustash\Facebookpixel\Helper;
 
-use Augustash\Crazyegg\Helper\Data as CrazyeggHelperData;
-
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
+
+    const XML_PATH_ENABLED = 'augustash_facebookpixel/general/enabled';
+    const XML_PATH_SNIPPET_ENABLED = 'augustash_facebookpixel/advanced/snippet';
+    const XML_PATH_TRACK_REVENUE = 'augustash_facebookpixel/general/account_number';
+    const XML_PATH_ACCOUNT_NUMBER = 'augustash_facebookpixel/general/account_number';
+
     /**
      * @var boolean
      */
@@ -31,9 +35,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      *
      * @return boolean
      */
-    public function isEnabled()
+    public function isEnabled($storeId = null)
     {
-        $this->isEnabled = $this->getConfig('augustash_facebookpixel/general/enabled');
+        $this->isEnabled = $this->getConfig(self::XML_PATH_IS_ENABLED, $storeId);
 
         return $this->isEnabled;
     }
@@ -43,9 +47,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      *
      * @return boolean
      */
-    public function isSnippetEnabled()
+    public function isSnippetEnabled($storeId = null)
     {
-        $this->isSnippetEnabled = $this->getConfig('augustash_facebookpixel/advanced/snippet');
+        $this->isSnippetEnabled = $this->getConfig(self::XML_PATH_SNIPPET_ENABLED, $storeId);
 
         return $this->isSnippetEnabled;
     }
@@ -55,9 +59,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      *
      * @return boolean
      */
-    public function trackRevenue()
+    public function trackRevenue($storeId = null)
     {
-        $this->revenueEnabled = $this->getConfig('augustash_facebookpixel/advanced/revenue');
+        $this->revenueEnabled = $this->getConfig(self::XML_PATH_TRACK_REVENUE, $storeId);
 
         return $this->revenueEnabled;
     }
@@ -67,9 +71,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      *
      * @return string
      */
-    public function accountNumber()
+    public function accountNumber($storeId = null)
     {
-        $this->accountNumber = $this->getConfig('augustash_facebookpixel/general/account_number');
+        $this->accountNumber = $this->getConfig(self::XML_PATH_ACCOUNT_NUMBER, $storeId);
 
         return $this->accountNumber;
     }
