@@ -37,7 +37,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnabled($storeId = null)
     {
-        $this->isEnabled = $this->getConfig(self::XML_PATH_IS_ENABLED, $storeId);
+        $this->isEnabled = $this->getConfig(self::XML_PATH_ENABLED, $storeId);
 
         return $this->isEnabled;
     }
