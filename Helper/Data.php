@@ -7,7 +7,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     const XML_PATH_ENABLED = 'augustash_facebookpixel/general/enabled';
     const XML_PATH_SNIPPET_ENABLED = 'augustash_facebookpixel/advanced/snippet';
-    const XML_PATH_TRACK_REVENUE = 'augustash_facebookpixel/general/account_number';
+    const XML_PATH_TRACK_REVENUE = 'augustash_facebookpixel/advanced/revenue';
     const XML_PATH_ACCOUNT_NUMBER = 'augustash_facebookpixel/general/account_number';
 
     /**
