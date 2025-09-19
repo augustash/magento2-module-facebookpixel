@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Augustash Facebook Pixel
+ *
+ * Adds the meta pixel tracking script to the HTML head section
+ *
+ * @author Josh Johnson <josh@augustash.com>
+ * @author Adam Cornell <acornell@augustash.com>
+ * @copyright 2025 - present August Ash, Inc. (https://augustash.com)
+ */
+
+declare(strict_types=1);
+
+use Augustash\Facebookpixel\Block\Blocks;
+use Magento\Framework\Escaper;
+
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var Blocks $block */
+/** @var Escaper $escaper */
+?>
+
+<?php if ($block->isSnippetEnabled() && $block->getAccountNumber()): ?>
+    <!-- BEGIN Augustash_FacebookPixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', <?= $escaper->escapeHtmlAttr($block->getAccountNumber()); ?>);
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=<?= $escaper->escapeHtmlAttr($block->getAccountNumber()); ?>&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- END Augustash_FacebookPixel -->
+<?php endif; ?>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Augustash Facebook Pixel
+ *
+ * Adds the meta pixel tracking script to the HTML head section
+ *
+ * @author Josh Johnson <josh@augustash.com>
+ * @author Adam Cornell <acornell@augustash.com>
+ * @copyright 2025 - present August Ash, Inc. (https://augustash.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+       <section id="augustash_facebookpixel" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+           <label>Facebook Pixel</label>
+           <tab>augustash</tab>
+           <resource>Augustash_Facebookpixel::config</resource>
+           <group id="general" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label><![CDATA[Facebookpixel General Settings]]></label>
+               <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label>Enabled</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <comment><![CDATA[Enable or diable module's functionality.]]></comment>
+               </field>
+               <field id="account_number" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label>Account Number</label>
+                   <comment><![CDATA[Facebook Pixel Account #]]></comment>
+               </field>
+            </group>
+            <group id="advanced" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+               <label>Facebookpixel Advanced Settings</label>
+               <field id="snippet" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label>Add Facebook Pixel javascript to header</label>
+                   <comment><![CDATA[Third-party modules may also add the Facebook Pixel javascript snippet. Stop this module from adding the snippet by selecting 'no'.]]></comment>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+               <field id="revenue" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label>Enable Revenue Tracking</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                   <comment><![CDATA[Enable or disable the return of order totals to the Facebook Pixel dashboard.]]></comment>
+               </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Augustash Facebook Pixel
+ *
+ * Adds the meta pixel tracking script to the HTML head section
+ *
+ * @author Josh Johnson <josh@augustash.com>
+ * @author Adam Cornell <acornell@augustash.com>
+ * @copyright 2025 - present August Ash, Inc. (https://augustash.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Augustash\FacebookPixel\Api\ConfigInterface" type="Augustash\FacebookPixel\Model\Config"/>
+</config>

@@ -1,8 +1,0 @@
-<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
-
-<?php // Checks that the module is enabled and revenue tracking is enabled. ?>
-<?php if ($this->getIsEnabled() && $this->getRevenueEnabled()): ?>
-	<script type="text/javascript">
-	    fbq('track', 'Purchase', {'value':<?php print $block->getRevenue(); ?>,'currency':'USD'});
-	</script>
-<?php endif; ?>

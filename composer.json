@@ -3,7 +3,17 @@
     "description": "Module that adds FaceBook Pixel to header.",
     "type": "magento2-module",
     "license": [
-        "proprietary"
+        "MIT"
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        },
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.com/augustash/magento/"
+        }
     ],
     "authors":[
         {
@@ -15,21 +25,46 @@
             "email":"josh@augustash.com"
         }
     ],
-    "require": {
-        "augustash/module-core": "~1.0.1"
+     "require": {
+        "php": ">=8.1",
+        "magento/framework": ">=103.0",
+        "magento/module-backend": "@stable",
+        "magento/module-store": "@stable",
+        "magento/module-checkout": "@stable",
+        "augustash/module-backend": "@stable"
     },
-    "repositories": {
-        "augustash-core": {
-            "type": "vcs",
-            "url": "https://github.com/augustash/magento2-module-augustash-core.git"
-        }
+    "require-dev": {
+        "augustash/magento2-quality-suite": "^1.0"
     },
     "autoload": {
         "files": [
-            "registration.php"
+            "src/registration.php"
         ],
         "psr-4": {
-            "Augustash\\Facebookpixel\\": ""
+            "Augustash\\Facebookpixel\\": "src/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "test:all": [
+            "@test:lint",
+            "@test:mess",
+            "@test:stan",
+            "@test:style"
+        ],
+        "test:lint": "vendor/bin/parallel-lint --exclude vendor src/",
+        "test:mess": "vendor/bin/phpmd src/ text phpmd.xml.dist",
+        "test:stan": "php -d memory_limit=512M vendor/bin/phpstan analyze --no-interaction --no-progress src/",
+        "test:static-analysis": [
+            "@test:lint",
+            "@test:stan"
+        ],
+        "test:style": "vendor/bin/phpcs -s src/"
     }
 }
