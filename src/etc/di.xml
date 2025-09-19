@@ -11,5 +11,5 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Augustash\FacebookPixel\Api\ConfigInterface" type="Augustash\FacebookPixel\Model\Config"/>
+    <preference for="Augustash\Facebookpixel\Api\ConfigInterface" type="Augustash\Facebookpixel\Model\Config"/>
 </config>
