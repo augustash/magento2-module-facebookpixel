@@ -33,6 +33,7 @@ Module that adds FaceBook Pixel to header.
 $ composer require augustash/module-facebookpixel
 ```
 
+
 ## Uninstall
 
 After all dependent modules have also been disabled or uninstalled, you can finally remove this module:
