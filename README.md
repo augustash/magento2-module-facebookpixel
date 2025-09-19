@@ -1,6 +1,6 @@
 # Augustash_FacebookPixel
 
-!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD033 -->
 <div align="center">
     <a href="https://augustash.com" target="_blank">
         <picture>
