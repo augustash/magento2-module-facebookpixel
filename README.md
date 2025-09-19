@@ -1,6 +1,6 @@
 # Augustash_FacebookPixel
 
-!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD033 -->
 <div align="center">
     <a href="https://augustash.com" target="_blank">
         <picture>
@@ -30,31 +30,7 @@ Module that adds FaceBook Pixel to header.
 ### Composer
 
 ```bash
-<<<<<<< Updated upstream
-$ composer config repositories.augustash-facebookpixel vcs https://github.com/augustash/magento2-module-facebookpixel.git
-$ composer require augustash/module-facebookpixel:~1.0.35
-```
-
-
-#### Manually editing composer.json (not recommended)
-
-In your project's `composer.json` file, add the following lines to the `require` and `repositories` sections:
-
-```js
-{
-    "require": {
-        "augustash/module-facebookpixel": "~1.0.35"
-    },
-    "repositories": {
-        "augustash-facebookpixel": {
-            "type": "vcs",
-            "url": "https://github.com/augustash/magento2-module-facebookpixel.git"
-        }
-    }
-}
-=======
 $ composer require augustash/module-facebookpixel
->>>>>>> Stashed changes
 ```
 
 ## Uninstall
